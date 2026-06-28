@@ -1,0 +1,9 @@
+SOFTWARE & SERVICES AGREEMENT (excerpt)
+
+1. Term & Renewal: The initial term is one year and this Agreement renews automatically for successive one-year terms unless either party gives notice ninety days before the end of the then-current term.
+2. Early Termination Fee: If the Customer terminates early, the Customer shall pay an early termination fee equal to the remaining fees plus a penalty of three times the monthly charge.
+3. Provider Rights: The Provider may terminate this agreement at any time in its sole discretion, without liability to the Customer.
+4. Intellectual Property: The Customer assigns all right, title and interest in all deliverables to the Provider, and all work is deemed work made for hire.
+5. Confidentiality: The Customer's confidentiality obligations survive indefinitely and continue in perpetuity.
+6. Governing Law: This Agreement is governed by the laws of Singapore, and the parties submit to arbitration in Singapore.
+7. Limitation of Liability: In no event shall the Provider be liable for any indirect or consequential damages, and the Provider disclaims all warranties.

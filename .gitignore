@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.adk/
+*.db
+artifacts/
+.pytest_cache/
+*.egg-info/
+
+# local scratch preview (the scanned sample PDF is what ships)
+samples/contract_scan_preview.png
+
+# local command notes (not part of the repo)
+conda activate clauseguard.txt
+uv run adk web app --port 8080.txt

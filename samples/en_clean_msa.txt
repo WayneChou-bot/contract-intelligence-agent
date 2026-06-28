@@ -1,0 +1,9 @@
+MASTER SERVICES AGREEMENT (excerpt)
+
+1. Services: The Provider will deliver the web-development services described in each signed Statement of Work.
+2. Term: This Agreement begins on the Effective Date and continues for twelve (12) months; the parties may agree in writing to extend it.
+3. Fees: The Client will pay the fees in each Statement of Work within thirty (30) days of the invoice date.
+4. Ending the Agreement: Either party may end this Agreement on sixty (60) days written notice to the other.
+5. Confidentiality: Each party keeps the other's confidential information secret for three (3) years after this Agreement ends.
+6. Materials: Each party keeps ownership of the materials it created before the project; final deliverables are licensed to the Client after full payment.
+7. Disputes: The parties will resolve disputes in good faith in the courts where the Client is located.
