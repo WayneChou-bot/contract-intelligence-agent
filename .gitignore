@@ -14,3 +14,6 @@ samples/contract_scan_preview.png
 # local command notes (not part of the repo)
 conda activate clauseguard.txt
 uv run adk web app --port 8080.txt
+
+# local diagram generator (the rendered PNG is what ships)
+docs/_build_diagram.py

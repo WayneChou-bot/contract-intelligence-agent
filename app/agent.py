@@ -1,9 +1,9 @@
-"""Contract Intelligence Agent — a modular AI agent (Google ADK 2.x + Gemini).
+"""Contract Intelligence Agent — a modular AI agent (Google ADK 2.x).
 
 The agent owns reasoning and orchestration only. Every domain capability lives
 in a reusable, framework-agnostic skill under `skills/`, exposed to the runtime
-as a governed tool. Contract review is the first production-ready capability;
-new skills (OCR, regulation lookup, etc.) can be added without touching the agent.
+as a governed tool. The reasoning model is pluggable: cloud Gemini by default,
+or a fully local model (Ollama/Gemma) via MODEL_BACKEND=local.
 
 Verified against google-adk 2.3.0.
 """
@@ -11,9 +11,8 @@ from __future__ import annotations
 
 from google.adk.agents import Agent
 from google.adk.apps import App
-from google.adk.models import Gemini
-from google.genai import types
 
+from app.model import build_agent_model
 from skills.compare import compare as _compare
 from skills.contract_review import review as _review
 from skills.read_document import read_document as _read_document
@@ -23,10 +22,10 @@ from skills.translate import translate as _translate
 
 
 def read_document(file_path: str) -> dict:
-    """Read/OCR a PDF or image file at a local path and return its text. Works on
-    scanned or photographed contracts (Gemini multimodal vision). Use when the
-    user gives a file path or asks you to read a PDF / scan / image; then pass the
-    returned text to another tool such as review_contract or summarize_contract."""
+    """Read a PDF or image at a local path and return its text via deterministic
+    on-device OCR (Tesseract) - no model, no API key. Use when the user gives a
+    file path or asks you to read a PDF / scan / image; then pass the returned text
+    to another tool such as review_contract or summarize_contract."""
     return _read_document(file_path)
 
 
@@ -90,8 +89,7 @@ is decision support, not legal advice."""
 
 root_agent = Agent(
     name="root_agent",
-    model=Gemini(model="gemini-flash-latest",
-                 retry_options=types.HttpRetryOptions(attempts=3)),
+    model=build_agent_model(),
     instruction=_INSTRUCTION,
     tools=[read_document, review_contract, summarize_contract, compare_contracts,
            explain_risk, translate_contract],

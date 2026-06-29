@@ -12,6 +12,11 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0"]
+# Deterministic on-device OCR (Tesseract). Also install the tesseract binary +
+# language packs (eng, chi_tra) on the OS.
+ocr = ["pytesseract>=0.3", "pymupdf>=1.24", "Pillow>=10"]
+# Fully-local reasoning model (Ollama/Gemma) for the agent + translate.
+local = ["google-adk[extensions]", "litellm>=1.40"]
 
 [build-system]
 requires = ["hatchling"]
