@@ -12,7 +12,7 @@ capstone, [repo](https://github.com/WayneChou-bot/contract-risk-agent)).
 ClauseGuard was one focused contract-review agent — here it becomes the **first
 skill** of a platform, and a single agent decides which skill to call.
 
-![ClauseLens architecture](docs/clauselens_architecture.png)
+![ClauseLens architecture](docs/clauselens_architecture_v2.png)
 
 ## 🧩 Architecture — three layers
 

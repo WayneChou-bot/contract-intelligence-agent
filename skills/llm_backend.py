@@ -24,6 +24,14 @@ def ollama_model() -> str:
     return os.environ.get("OLLAMA_MODEL", "gemma4").strip()
 
 
+def ollama_api_base() -> str:
+    """Ollama endpoint. Use a literal loopback IP, not the name 'localhost', so
+    it keeps working with the network adapter disabled (offline) — name
+    resolution (getaddrinfo) can fail while 127.0.0.1 always routes locally."""
+    base = os.environ.get("OLLAMA_API_BASE", "http://127.0.0.1:11434").strip()
+    return base.replace("localhost", "127.0.0.1")
+
+
 def engine_label() -> str:
     return f"ollama:{ollama_model()}" if is_local() else "gemini-flash-latest"
 
@@ -44,6 +52,7 @@ def generate_text(prompt: str) -> str:
         import litellm
         resp = litellm.completion(
             model=f"ollama_chat/{ollama_model()}",
+            api_base=ollama_api_base(),
             messages=[{"role": "user", "content": prompt}],
         )
         return resp["choices"][0]["message"]["content"]

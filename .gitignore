@@ -17,3 +17,7 @@ uv run adk web app --port 8080.txt
 
 # local diagram generator (the rendered PNG is what ships)
 docs/_build_diagram.py
+
+# recordings — never upload videos
+影片/
+*.mp4
